@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="Angello">
+
+</html>
+<html>
+<head>
+    <title>Angello Lite</title>
+    <script src="/public/vendor/jquery/dist/jquery.js"></script>
+    <script src="/public/vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/vendor/bootstrap/dist/css/bootstrap.min.css"/>
+    <base href="/" >
+</head>
+
+<body>
+
+<script src="/public/vendor/angular/angular.js" ></script>
+<script src="/public/vendor/angular-route/angular-route.js"></script>
+<script src="/public/vendor/ng-lodash/build/ng-lodash.js"></script>
+
+
+<script src="/public/javascripts/app.js"></script>
+<script src="/public/javascripts/main/mainController.js"></script>
+
+
+<div class ="well">
+    <div ng-controller="MainCtrl as main">
+        <div class="col-md-4">
+            <h2>Stories</h2>
+            <div class="callout"
+            ng-repeat="story in main.stories"
+            ng-click="main.setCurrrentStory(story)">
+                <h4>{{story.title}}</h4>
+                <p>{{story.description}}</p>
+            </div>
+
+            <br/>
+            <a class="'btn btn-primary" ng-click="main.createStory()">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
